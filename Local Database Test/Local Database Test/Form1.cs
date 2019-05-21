@@ -67,7 +67,6 @@ namespace Local_Database_Test
             String syntaxTemplate = "SELECT contact FROM Students where Std_Id={0}"; //Syntax used in the Database
             String syntax = string.Format(syntaxTemplate, stuID);
             cmd = new SqlCommand(syntax, con);  //New sql command
-            con.Close(); // Close the connection
             dr = cmd.ExecuteReader();   //Takes Temp values from the database
             dr.Read();  //Reads the data from the database            
             contactTextBox.Text = "" + dr[0].ToString();  //Display First Name in First name TextBox
